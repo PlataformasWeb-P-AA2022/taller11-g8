@@ -24,20 +24,6 @@ class Edificio(models.Model):
                 self.ciudad,
                 self.tipo)
 
-   """ def obtener_costo_telefonos(self):
-        # valor = [t.costo_plan for t in self.numeros_telefonicos.all()]
-        # valor = sum(valor)  # [10.2, 20]
-        valor = 0;
-        for t in self.numeros_telefonicos.all(): # self.num_telefonicos -> me devuelve un listado de obj de tipo Departamento
-            valor = valor + t.costo_plan
-        return valor
-
-    def obtener_cantidad_telefonos(self):
-        """
-        """
-        valor = len(self.numeros_telefonicos.all())
-        return valor"""
-
 
 class Departamento(models.Model):
     nombre_prop = models.CharField(max_length=100)
