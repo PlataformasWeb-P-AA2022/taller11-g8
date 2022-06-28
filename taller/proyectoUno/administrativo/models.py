@@ -12,7 +12,6 @@ class Edificio(models.Model):
     ('(Comercial)','comercial')
     )
 
-
     nombre = models.CharField(max_length=30)
     direccion = models.CharField(max_length=30)
     ciudad = models.CharField(max_length=30)
