@@ -31,7 +31,7 @@ def obtener_edificio(request, id):
     return render(request, 'obtener_Edificio.html', informacion_template)
 
 
-def crear_Edificio(request):
+def crear_edificio(request):
     """
     """
     if request.method=='POST':
@@ -47,7 +47,7 @@ def crear_Edificio(request):
     return render(request, 'crearEdificio.html', diccionario)
 
 
-def editar_Edificio(request, id):
+def editar_edificio(request, id):
     """
     """
     Edificio = Edificio.objects.get(pk=id)
@@ -64,7 +64,7 @@ def editar_Edificio(request, id):
     return render(request, 'editarEdificio.html', diccionario)
 
 
-def eliminar_Edificio(request, id):
+def eliminar_edificio(request, id):
     """
     """
     Edificio = Edificio.objects.get(pk=id)
