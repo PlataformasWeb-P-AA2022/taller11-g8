@@ -5,7 +5,7 @@
 
 <form action="" method="post" class="miformulario">
   {% csrf_token %}
-  {{formulario.as_ul}}
+  {{formulario.as_p}}
   <p><input type='submit' value='Agregar'/></p>
 </form>
 
