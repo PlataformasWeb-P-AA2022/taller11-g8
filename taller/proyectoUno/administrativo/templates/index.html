@@ -1,25 +1,25 @@
 {% extends "master.html" %}
 
 {% block title %}
-  Listado de Estudiantes | {{ block.super }}
+  Listado de Edificios| {{ block.super }}
 {% endblock %}
 
 {% block content %}
-<h3>Número de estudiantes {{ numero_estudiantes }}</h3>
+<h3>Número de Edificios {{ numero_edificios}}</h3>
 
 <table id="tabla_datos">
 
   <thead>
     <tr>
-      <th>Estudiante</th>
-      <th>Cedula</th>
-      <th>Correo</th>
-      <th>Numeros Telefónico </th>
+      <th>Nombre del Edificio</th>
+      <th>Dirección</th>
+      <th>Ciudad</th>
+      <th>Tipo de edificio</th>
       <th>Opciones</th>
     </tr>
   </thead>
 
-  {% for e in estudiantes %}
+  {% for e in edificios %}
   <tr>
     <td> {{e.nombre}} {{e.apellido}}</td>
     <td> {{e.cedula}}</td>
