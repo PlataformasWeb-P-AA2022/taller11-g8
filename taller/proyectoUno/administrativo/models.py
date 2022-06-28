@@ -47,4 +47,6 @@ class Departamento(models.Model):
             related_name="num_dep")
 
     def __str__(self):
-        return "%s %s" % (self.nombre_prop, self.costo_dep, self.num_cuartos)
+        return "%s %s %d" % (self.nombre_prop, 
+                self.costo_dep, 
+                self.num_cuartos)
