@@ -77,7 +77,7 @@ def crear_departamento(request):
     """
 
     if request.method=='POST':
-        formulario = departamentoForm(request.POST)
+        formulario = DepartamentoForm(request.POST)
         print(formulario.errors)
         if formulario.is_valid():
             formulario.save()
@@ -86,37 +86,37 @@ def crear_departamento(request):
         formulario = departamentoForm()
     diccionario = {'formulario': formulario}
 
-    return render(request, 'creardepartamento.html', diccionario)
+    return render(request, 'crearDepartamento.html', diccionario)
 
 
 def editar_departamento(request, id):
     """
     """
-    telefono = departamento.objects.get(pk=id)
+    nombre_prop = departamento.objects.get(pk=id)
     if request.method=='POST':
-        formulario = departamentoForm(request.POST, instance=telefono)
+        formulario = DepartamentoForm(request.POST, instance=nombre_prop)
         print(formulario.errors)
         if formulario.is_valid():
             formulario.save()
             return redirect(index)
     else:
-        formulario = departamentoForm(instance=telefono)
+        formulario = departamentoForm(instance=nombre_prop)
     diccionario = {'formulario': formulario}
 
     return render(request, 'creardepartamento.html', diccionario)
 
-def crear_departamento_Edificio(request, id):
+def crear_departamento_edificio(request, id):
     """
     """
-    Edificio = Edificio.objects.get(pk=id)
+    edificio = Edificio.objects.get(pk=id)
     if request.method=='POST':
-        formulario = departamentoEdificioForm(Edificio, request.POST)
+        formulario = DepartamentoEdificioForm(edificio, request.POST)
         print(formulario.errors)
         if formulario.is_valid():
             formulario.save()
             return redirect(index)
     else:
-        formulario = departamentoEdificioForm(Edificio)
-    diccionario = {'formulario': formulario, 'Edificio': Edificio}
+        formulario = DepartamentoEdificioForm(edificio)
+    diccionario = {'formulario': formulario, 'edificio': edificio}
 
-    return render(request, 'creardepartamentoEdificio.html', diccionario)
+    return render(request, 'crearDepartamentoEdificio.html', diccionario)
