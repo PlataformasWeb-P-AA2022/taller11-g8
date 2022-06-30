@@ -63,7 +63,7 @@ class DepartamentoEdificioForm(ModelForm):
         super(DepartamentoEdificioForm, self).__init__(*args, **kwargs)
         self.initial['edificio'] = Edificio
         self.fields["edificio"].widget = forms.widgets.HiddenInput()
-        print(edificio)
+        print(Edificio)
 
     class Meta:
         model = Departamento

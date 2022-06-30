@@ -28,7 +28,7 @@ def obtener_edificio(request, id):
     edificio = Edificio.objects.get(pk=id)
 
     informacion_template = {'edificio': edificio}
-    return render(request, 'obtener_Edificio.html', informacion_template)
+    return render(request, 'obtener_edificio.html', informacion_template)
 
 
 def crear_edificio(request):
@@ -44,34 +44,35 @@ def crear_edificio(request):
         formulario = EdificioForm()
     diccionario = {'formulario': formulario}
 
-    return render(request, 'crearEdificio.html', diccionario)
+    return render(request, 'crear_edificio.html', diccionario)
 
 
 def editar_edificio(request, id):
     """
     """
-    Edificio = Edificio.objects.get(pk=id)
+    Edificios = Edificio.objects.get(pk=id)
     if request.method=='POST':
-        formulario = EdificioForm(request.POST, instance=edificio)
+        formulario = EdificioForm(request.POST, instance=Edificios)
         print(formulario.errors)
         if formulario.is_valid():
             formulario.save()
             return redirect(index)
     else:
-        formulario = EdificioForm(instance=edificio)
+        formulario = EdificioForm(instance=Edificios)
     diccionario = {'formulario': formulario}
 
-    return render(request, 'editarEdificio.html', diccionario)
+    return render(request, 'editar_edificio.html', diccionario)
 
 
 def eliminar_edificio(request, id):
     """
     """
-    Edificio = Edificio.objects.get(pk=id)
-    Edificio.delete()
+    Edificios = Edificio.objects.get(pk=id)
+    Edificios.delete()
     return redirect(index)
 
 
+    
 def crear_departamento(request):
     """
     """
@@ -83,16 +84,16 @@ def crear_departamento(request):
             formulario.save()
             return redirect(index)
     else:
-        formulario = departamentoForm()
+        formulario = DepartamentoForm()
     diccionario = {'formulario': formulario}
 
-    return render(request, 'crearDepartamento.html', diccionario)
+    return render(request, 'crear_departamento.html', diccionario)
 
 
 def editar_departamento(request, id):
     """
     """
-    nombre_prop = departamento.objects.get(pk=id)
+    nombre_prop = Departamento.objects.get(pk=id)
     if request.method=='POST':
         formulario = DepartamentoForm(request.POST, instance=nombre_prop)
         print(formulario.errors)
@@ -100,10 +101,17 @@ def editar_departamento(request, id):
             formulario.save()
             return redirect(index)
     else:
-        formulario = departamentoForm(instance=nombre_prop)
+        formulario = DepartamentoForm(instance=nombre_prop)
     diccionario = {'formulario': formulario}
 
-    return render(request, 'creardepartamento.html', diccionario)
+    return render(request, 'editar_departamento.html', diccionario)
+
+def eliminar_dep(request, id):
+    """
+    """
+    departamento = Departamento.objects.get(pk=id)
+    departamento.delete()
+    return redirect(index)
 
 def crear_departamento_edificio(request, id):
     """
@@ -119,4 +127,5 @@ def crear_departamento_edificio(request, id):
         formulario = DepartamentoEdificioForm(edificio)
     diccionario = {'formulario': formulario, 'edificio': edificio}
 
-    return render(request, 'crearDepartamentoEdificio.html', diccionario)
+    return render(request, 'crear_Dep_edi.html', diccionario)
+

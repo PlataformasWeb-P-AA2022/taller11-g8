@@ -1,7 +1,3 @@
-"""
-    Manejo de urls para la aplicación
-    administrativo
-"""
 from django.urls import path
 # se importa las vistas de la aplicación
 from . import views
@@ -17,11 +13,13 @@ urlpatterns = [
             name='editar_edificio'),
         path('eliminar/edificio/<int:id>', views.eliminar_edificio, 
             name='eliminar_edificio'),
-        # numeros telefonicos
+
         path('crear/departamento', views.crear_departamento, 
             name='crear_departamento'),
         path('editar/departamento/<int:id>', views.editar_departamento, 
             name='editar_departamento'),
+        path('eliminar/edificio/<int:id>', views.eliminar_dep, 
+            name='eliminar_dep'),
         path('crear/departamento/edificio/<int:id>', 
             views.crear_departamento_edificio, 
             name='crear_departamento_edificio'),

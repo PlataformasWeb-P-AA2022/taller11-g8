@@ -22,14 +22,22 @@ class Edificio(models.Model):
                 self.direccion,
                 self.ciudad,
                 self.tipo)
+    def obtener_costo_departametos_edificio(self):
+        valor = [d.costo_dep for d in self.departamentos.all()]
+        valor = sum(valor)
+        return valor
 
+    def obtener_cantidad_cuartos(self):
+        valor = [d.num_cuartos for d in self.departamentos.all()]
+        valor = sum(valor)
+        return 
 
 class Departamento(models.Model):
     nombre_prop = models.CharField(max_length=100)
     costo_dep = models.DecimalField(max_digits=100, decimal_places=2)
     num_cuartos = models.IntegerField()
     edificio = models.ForeignKey(Edificio, on_delete=models.CASCADE,
-            related_name="num_dep")
+            related_name="departamentos")
 
     def __str__(self):
         return "%s %s %d" % (self.nombre_prop, 

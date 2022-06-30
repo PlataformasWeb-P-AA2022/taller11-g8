@@ -1,0 +1,114 @@
+/* manejo de las características de la etiqueta body*/
+
+body {
+  /*background: #FEFEFD;*/
+  background: #FEFEFD;
+  /*padding: 30px;*/
+  
+
+}
+
+header {
+  background: #034275;
+  color: #FFF;
+}
+
+/* manejo de las características de la etiqueta table*/
+
+section {
+  width: 100%;
+  
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid black;
+}
+
+tr:hover {
+  background-color: #258EAD;
+}
+
+
+label {
+  padding: 12px 10px;
+}
+/* manejo de las características de las clases*/
+
+.colorceldsprintfa{
+  background: #9999FF;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.miformulario{
+  width: 100%;
+}
+
+.errorlist li {
+  color: red;
+}
+
+.top_menu ul
+{
+  list-style:none;
+  float:left;
+  padding: 5px;
+  width:99%;
+}
+
+.top_menu ul li
+{
+  float:left;
+  margin-right:10px;
+  margin-bottom:5px;
+  color: #FFF;
+}
+
+.top_menu ul li :hover{
+  color: black;
+}
+
+footer{
+  background: #034275;
+  color: #FFF;
+}
+
+/*
+  agregar dos columnas
+  tomado de:
+  https://dev.to/drews256/ridiculously-easy-row-and-column-layouts-with-flexbox-1k01
+*/
+
+.wrapper-dos-columnas {
+  margin: 15px;
+  background-color: red;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.izquierda-column {
+  background-color: #FFF;
+  height: 200px;
+}
+
+.derecha-column {
+  background-color: #FFF;
+  height: 200px;
+}
+
+/* fin dos columnas*/
