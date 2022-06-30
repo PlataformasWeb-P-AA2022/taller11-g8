@@ -10,10 +10,10 @@ class EdificioForm(ModelForm):
         model = Edificio
         fields = ['nombre', 'direccion', 'ciudad', 'tipo']
         labels = {
-            'nombre': _('Ingrese nombre por favor'),
-            'direccion': _('Ingrese la dirección por favor'),
-            'ciudad': _('Ingrese ciudad por favor'),
-            'tipo': _('Ingrese tipo por favor'),
+            'nombre': _('Ingrese nombre del edificio'),
+            'direccion': _('Ingrese la dirección del edificio'),
+            'ciudad': _('Ingrese la ciudad'),
+            'tipo': _('Tipo de Edificio'),
         }
 
 
@@ -29,7 +29,11 @@ class DepartamentoForm(ModelForm):
     class Meta:
         model = Departamento
         fields = ['nombre_prop', 'costo_dep', 'num_cuartos','edificio']
-
+        labels = {
+            'nombre_prop':_('Nombre del propietario'),
+            'costo_dep': _('Costo del departamento'),
+            'num_cuartos': _('Numero de cuartos')
+        }
 
     def clean_costo_dep(self):
         valor = self.cleaned_data['costo_dep']
@@ -68,3 +72,8 @@ class DepartamentoEdificioForm(ModelForm):
     class Meta:
         model = Departamento
         fields = ['nombre_prop', 'costo_dep', 'num_cuartos','edificio']
+        labels = {
+            'nombre_prop':_('Nombre del propietario'),
+            'costo_dep': _('Costo del departamento'),
+            'num_cuartos': _('Numero de cuartos')
+        }
